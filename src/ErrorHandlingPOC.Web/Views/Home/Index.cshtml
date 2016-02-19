@@ -1,0 +1,13 @@
+﻿@using System.Threading.Tasks
+@using ErrorHandlingPOC.Web.Facades
+@model ErrorHandlingPOC.Web.Facades.Response<string>
+
+<div>@Model.Result</div>
+
+@if (!Model.IsValid)
+{
+    foreach (var error in Model.Errors)
+    {
+        <div>@error.Value</div>
+    }
+}
